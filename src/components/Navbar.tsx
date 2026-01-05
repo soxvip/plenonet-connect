@@ -37,7 +37,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" target="_blank" rel="noopener noreferrer">
+            <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9">
               <Button variant="hero" size="default">
                 Testar
               </Button>
@@ -55,7 +55,7 @@ const Navbar = () => {
             {navLinks.map(link => <a key={link.href} href={link.href} className="block py-3 text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
                 {link.label}
               </a>)}
-            <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" target="_blank" rel="noopener noreferrer">
+            <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9">
               <Button variant="hero" className="w-full mt-4">
                 Testar
               </Button>
