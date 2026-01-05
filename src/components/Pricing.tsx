@@ -1,12 +1,13 @@
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const redirectLink = "https://servex.ws/loja/21502f31-5e93-4a20-8e68-a52f8024c14c";
+
 const plans = [
   {
-    name: "PLENO-LITE",
-    price: "24,90",
+    name: "Plano Mensal",
+    price: "14,99",
     popular: false,
-    link: "https://servex.ws/loja/21502f31-5e93-4a20-8e68-a52f8024c14c",
     features: [
       { text: "1 aparelho permitido", included: true },
       { text: "Servidores Brasileiros", included: true },
@@ -16,10 +17,9 @@ const plans = [
     ],
   },
   {
-    name: "PLENO-MAIS",
-    price: "39,90",
+    name: "Plano Trimestral",
+    price: "34,99",
     popular: true,
-    link: null,
     features: [
       { text: "1 aparelho permitido", included: true },
       { text: "Servidores Brasileiros", included: true },
@@ -29,10 +29,9 @@ const plans = [
     ],
   },
   {
-    name: "PLENO-PRO",
-    price: "34,90",
+    name: "Plano Anual",
+    price: "149,99",
     popular: false,
-    link: null,
     features: [
       { text: "2 aparelhos permitidos", included: true },
       { text: "Ideal para roteamento", included: true },
@@ -53,7 +52,7 @@ const Pricing = () => {
             <span className="text-gradient">'democráticos'</span> para navegar à vontade!
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-4">
-            Esqueça o wifi! Com a PlenoNET você tem entretenimento móvel ilimitado na palma da sua mão.
+            Esqueça o wifi! Com a Streamix você tem entretenimento móvel ilimitado na palma da sua mão.
           </p>
           <p className="text-sm text-muted-foreground">
             * Todos os planos têm validade de 30 dias a partir da data de ativação.
@@ -110,17 +109,7 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              {plan.link ? (
-                <a href={plan.link}>
-                  <Button
-                    variant={plan.popular ? "hero" : "outline"}
-                    className="w-full"
-                    size="lg"
-                  >
-                    Assinar agora
-                  </Button>
-                </a>
-              ) : (
+              <a href={redirectLink}>
                 <Button
                   variant={plan.popular ? "hero" : "outline"}
                   className="w-full"
@@ -128,7 +117,7 @@ const Pricing = () => {
                 >
                   Assinar agora
                 </Button>
-              )}
+              </a>
             </div>
           ))}
         </div>
