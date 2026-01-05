@@ -41,11 +41,11 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <span className="text-2xl font-bold text-primary">✕</span>
-              <span className="text-xl font-bold text-foreground">PLENONET</span>
+              <span className="text-xl font-bold text-foreground">Streamix</span>
             </div>
             
             <p className="text-muted-foreground text-sm">
-              © Copyright 2025 PlenoNET - Dutra. Todos os direitos reservados.
+              © Copyright 2025 Streamix - Dutra. Todos os direitos reservados.
             </p>
           </div>
         </div>

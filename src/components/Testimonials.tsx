@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Pedro Oliveira",
     rating: 5,
-    text: "Suporte incrível! Tive uma dúvida e fui atendido rapidamente. Recomendo demais a PlenoNET!",
+    text: "Suporte incrível! Tive uma dúvida e fui atendido rapidamente. Recomendo demais a Streamix!",
   },
 ];
 
@@ -29,7 +29,7 @@ const Testimonials = () => {
             <span className="text-gradient">Play Store</span>
           </h2>
           <p className="text-muted-foreground">
-            Veja o que nossos clientes estão dizendo sobre a PlenoNET
+            Veja o que nossos clientes estão dizendo sobre a Streamix
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const Testimonials = () => {
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Ganhe uma renda extra revendendo nossos planos de internet. Entre em contato 
-            e descubra como se tornar um parceiro PlenoNET!
+            e descubra como se tornar um parceiro Streamix!
           </p>
           <Button variant="hero" size="lg">
             Quero saber mais agora →

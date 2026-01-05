@@ -28,10 +28,10 @@ const Benefits = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Por que escolher a{" "}
-            <span className="text-gradient">PlenoNET</span>?
+            <span className="text-gradient">Streamix</span>?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Descubra os benefícios que fazem da PlenoNET a melhor escolha para sua conexão móvel
+            Descubra os benefícios que fazem da Streamix a melhor escolha para sua conexão móvel
           </p>
         </div>
 

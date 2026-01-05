@@ -13,13 +13,13 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>PlenoNET - Internet Móvel Ilimitada | Conexão Rápida e Segura</title>
+        <title>Streamix - Internet Móvel Ilimitada | Conexão Rápida e Segura</title>
         <meta 
           name="description" 
-          content="Internet móvel ilimitada com a PlenoNET. Navegue sem limites de dados, com velocidades de até 100 Mbps e segurança VPN. Planos a partir de R$24,90/mês." 
+          content="Internet móvel ilimitada com a Streamix. Navegue sem limites de dados, com velocidades de até 100 Mbps e segurança VPN. Planos a partir de R$24,90/mês." 
         />
-        <meta name="keywords" content="internet móvel ilimitada, VPN, internet sem limites, PlenoNET, dados ilimitados" />
-        <link rel="canonical" href="https://plenonet.com.br" />
+        <meta name="keywords" content="internet móvel ilimitada, VPN, internet sem limites, Streamix, dados ilimitados" />
+        <link rel="canonical" href="https://streamix.com.br" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
