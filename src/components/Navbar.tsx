@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useRef } from "react";
+import { Menu, X, Play, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,6 +10,8 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const navLinks = [{
     href: "#sobre",
     label: "Sobre"
@@ -66,23 +68,58 @@ const Navbar = () => {
           </div>}
 
         {/* Video Modal */}
-        <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
+        <Dialog open={isVideoModalOpen} onOpenChange={(open) => {
+          setIsVideoModalOpen(open);
+          if (!open) setVideoEnded(false);
+        }}>
           <DialogContent className="sm:max-w-2xl">
             <DialogHeader>
               <DialogTitle>Assista o tutorial antes de testar</DialogTitle>
             </DialogHeader>
             <div className="flex flex-col gap-4">
-              <video
-                src="https://wtjhwrqqhcoweegxwtav.supabase.co/storage/v1/object/public/bucket1/totim.mp4"
-                controls
-                className="w-full rounded-lg"
-                autoPlay
-              />
-              <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" className="w-full">
-                <Button variant="hero" className="w-full" size="lg">
-                  Liberar teste agora
-                </Button>
-              </a>
+              <div className="relative">
+                <video
+                  ref={videoRef}
+                  src="https://wtjhwrqqhcoweegxwtav.supabase.co/storage/v1/object/public/bucket1/totim.mp4"
+                  controls={!videoEnded}
+                  className="w-full rounded-lg"
+                  autoPlay
+                  onEnded={() => setVideoEnded(true)}
+                  onPlay={() => setVideoEnded(false)}
+                />
+                {videoEnded && (
+                  <div className="absolute inset-0 bg-black/70 rounded-lg flex flex-col items-center justify-center gap-4">
+                    <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" className="w-3/4">
+                      <Button variant="hero" className="w-full" size="lg">
+                        <Play className="mr-2 h-5 w-5" />
+                        Liberar teste agora
+                      </Button>
+                    </a>
+                    <Button 
+                      variant="outline" 
+                      className="w-3/4" 
+                      size="lg"
+                      onClick={() => {
+                        if (videoRef.current) {
+                          videoRef.current.currentTime = 0;
+                          videoRef.current.play();
+                          setVideoEnded(false);
+                        }
+                      }}
+                    >
+                      <RotateCcw className="mr-2 h-5 w-5" />
+                      Assistir novamente
+                    </Button>
+                  </div>
+                )}
+              </div>
+              {!videoEnded && (
+                <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" className="w-full">
+                  <Button variant="hero" className="w-full" size="lg">
+                    Liberar teste agora
+                  </Button>
+                </a>
+              )}
             </div>
           </DialogContent>
         </Dialog>
