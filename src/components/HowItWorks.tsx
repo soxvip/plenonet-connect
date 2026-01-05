@@ -1,5 +1,13 @@
+import { useState } from "react";
 import { Download, KeyRound, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const steps = [
   {
@@ -20,6 +28,8 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -37,12 +47,10 @@ const HowItWorks = () => {
               minutos você estará navegando sem limites!
             </p>
 
-            <a href="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR">
-              <Button variant="hero" size="lg" className="gap-2">
-                <Download className="w-5 h-5" />
-                Baixar na Play Store
-              </Button>
-            </a>
+            <Button variant="hero" size="lg" className="gap-2" onClick={() => setIsOpen(true)}>
+              <Download className="w-5 h-5" />
+              Baixar na Play Store
+            </Button>
           </div>
 
           {/* Steps */}
@@ -76,6 +84,26 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center">Baixar Aplicativo</DialogTitle>
+            <DialogDescription className="text-center">
+              Clique no botão abaixo para baixar o aplicativo na Play Store
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center py-4">
+            <a href="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR">
+              <Button variant="hero" size="lg" className="gap-2">
+                <Download className="w-5 h-5" />
+                Ir para Play Store
+              </Button>
+            </a>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
