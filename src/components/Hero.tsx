@@ -83,11 +83,11 @@ const Hero = () => {
         setIsVideoModalOpen(open);
         if (!open) setVideoEnded(false);
       }}>
-        <DialogContent className="sm:max-w-2xl">
-          <DialogHeader>
+        <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader className="pr-8">
             <DialogTitle>Assista o tutorial antes de testar</DialogTitle>
           </DialogHeader>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 pb-2">
             <div className="relative">
               <video
                 ref={videoRef}
