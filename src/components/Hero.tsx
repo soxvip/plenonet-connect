@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   return (
@@ -33,19 +32,31 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Video */}
           <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={heroImage}
-                alt="Homem sorridente usando um laptop em um café moderno"
+              <video
+                src="https://wtjhwrqqhcoweegxwtav.supabase.co/storage/v1/object/public/bucket1/internet%20ilimitada%20pt1%20video.mp4"
+                controls
                 className="w-full h-auto object-cover"
+                autoPlay
+                muted
+                loop
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none" />
             </div>
             {/* Glow Effect */}
             <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full -z-10" />
+            
+            {/* Test Button Below Video */}
+            <div className="mt-6">
+              <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" className="w-full block">
+                <Button variant="hero" size="lg" className="w-full">
+                  Teste grátis
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
