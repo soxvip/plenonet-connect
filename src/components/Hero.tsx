@@ -26,9 +26,11 @@ const Hero = () => {
                   Adquirir um plano agora
                 </Button>
               </a>
-              <Button variant="heroOutline" size="lg">
-                Como isso funciona?
-              </Button>
+              <a href="#faq">
+                <Button variant="heroOutline" size="lg">
+                  Como isso funciona?
+                </Button>
+              </a>
             </div>
           </div>
 
