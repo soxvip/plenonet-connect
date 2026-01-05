@@ -1,13 +1,5 @@
-import { useState } from "react";
-import { Download, KeyRound, Wifi, Smartphone, Shield, Zap } from "lucide-react";
+import { Download, KeyRound, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 
 const steps = [
   {
@@ -28,8 +20,6 @@ const steps = [
 ];
 
 const HowItWorks = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -47,10 +37,12 @@ const HowItWorks = () => {
               minutos você estará navegando sem limites!
             </p>
 
-            <Button variant="hero" size="lg" className="gap-2" onClick={() => setIsOpen(true)}>
-              <Download className="w-5 h-5" />
-              Baixar na Play Store
-            </Button>
+            <a href="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR">
+              <Button variant="hero" size="lg" className="gap-2">
+                <Download className="w-5 h-5" />
+                Baixar na Play Store
+              </Button>
+            </a>
           </div>
 
           {/* Steps */}
@@ -84,66 +76,6 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
-
-      {/* Modal */}
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-lg">
-          <DialogHeader>
-            <DialogTitle className="text-center text-2xl">Baixar Aplicativo</DialogTitle>
-            <DialogDescription className="text-center">
-              Instale nosso app VPN para começar a navegar sem limites
-            </DialogDescription>
-          </DialogHeader>
-          
-          <div className="space-y-6 py-4">
-            {/* App Info */}
-            <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                <Smartphone className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground">Streamix VPN</h4>
-                <p className="text-sm text-muted-foreground">Internet móvel ilimitada</p>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Shield className="w-4 h-4 text-primary" />
-                <span>Conexão segura</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Zap className="w-4 h-4 text-primary" />
-                <span>Alta velocidade</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Wifi className="w-4 h-4 text-primary" />
-                <span>Dados ilimitados</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Download className="w-4 h-4 text-primary" />
-                <span>Fácil instalação</span>
-              </div>
-            </div>
-
-            {/* Download Button */}
-            <a 
-              href="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR"
-              className="block"
-            >
-              <Button variant="hero" size="lg" className="w-full gap-2">
-                <Download className="w-5 h-5" />
-                Baixar na Play Store
-              </Button>
-            </a>
-
-            <p className="text-xs text-center text-muted-foreground">
-              Disponível para Android 5.0 ou superior
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };
