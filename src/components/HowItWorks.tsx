@@ -37,10 +37,12 @@ const HowItWorks = () => {
               minutos você estará navegando sem limites!
             </p>
 
-            <Button variant="hero" size="lg" className="gap-2">
-              <Download className="w-5 h-5" />
-              Baixar na Play Store
-            </Button>
+            <a href="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR">
+              <Button variant="hero" size="lg" className="gap-2">
+                <Download className="w-5 h-5" />
+                Baixar na Play Store
+              </Button>
+            </a>
           </div>
 
           {/* Steps */}
