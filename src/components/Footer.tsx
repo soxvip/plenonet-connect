@@ -2,7 +2,7 @@ import { MessageCircle, Phone, Instagram, Music2, Headphones } from "lucide-reac
 
 const socialLinks = [
   { icon: MessageCircle, label: "Telegram", href: "#" },
-  { icon: Phone, label: "WhatsApp", number: "(27) 9 9651-9264", href: "#" },
+  { icon: Phone, label: "WhatsApp", number: "(91)98091-0280", href: "#" },
   { icon: Instagram, label: "Instagram", href: "#" },
   { icon: Music2, label: "TikTok", href: "#" },
   { icon: Headphones, label: "Discord", href: "#" },
