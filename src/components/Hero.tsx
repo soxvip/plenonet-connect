@@ -14,11 +14,11 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Com a PLENONET - Conexões, você tem internet móvel ilimitada para acessar o que quiser, 
+              Com a Streamix - Conexões, você tem internet móvel ilimitada para acessar o que quiser, 
               de onde quiser e quando quiser, por um preço acessível e que cabe em seu bolso. 
               O nosso projeto oferece Internet no seu celular mesmo após o esgotamento do plano/saldo 
               convencional da operadora. E aí? Está esperando o quê? Não perca tempo, corra já para a 
-              PlenoNET e viva o melhor da internet móvel totalmente ilimitada!
+              Streamix e viva o melhor da internet móvel totalmente ilimitada!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

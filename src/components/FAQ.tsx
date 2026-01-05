@@ -12,9 +12,9 @@ const faqs = [
       "Depende do plano escolhido. O PLENO-LITE e PLENO-MAIS permitem apenas 1 aparelho. Já o PLENO-PRO permite até 2 aparelhos simultâneos, sendo ideal para uso familiar ou roteamento.",
   },
   {
-    question: "Qual a diferença entre a PlenoNET e as operadoras tradicionais?",
+    question: "Qual a diferença entre a Streamix e as operadoras tradicionais?",
     answer:
-      "A PlenoNET oferece internet móvel ilimitada através de tecnologia VPN, funcionando mesmo após o esgotamento do seu plano convencional. Não dependemos de franquia de dados das operadoras tradicionais.",
+      "A Streamix oferece internet móvel ilimitada através de tecnologia VPN, funcionando mesmo após o esgotamento do seu plano convencional. Não dependemos de franquia de dados das operadoras tradicionais.",
   },
   {
     question: "Posso rotear minha internet para outras pessoas?",
@@ -48,7 +48,7 @@ const FAQ = () => {
             <span className="text-gradient">Frequentes</span>
           </h2>
           <p className="text-muted-foreground">
-            Tire suas dúvidas sobre a PlenoNET
+            Tire suas dúvidas sobre a Streamix
           </p>
         </div>
 
