@@ -6,6 +6,7 @@ const plans = [
     name: "PLENO-LITE",
     price: "24,90",
     popular: false,
+    link: "https://servex.ws/loja/21502f31-5e93-4a20-8e68-a52f8024c14c",
     features: [
       { text: "1 aparelho permitido", included: true },
       { text: "Servidores Brasileiros", included: true },
@@ -18,6 +19,7 @@ const plans = [
     name: "PLENO-MAIS",
     price: "39,90",
     popular: true,
+    link: null,
     features: [
       { text: "1 aparelho permitido", included: true },
       { text: "Servidores Brasileiros", included: true },
@@ -30,6 +32,7 @@ const plans = [
     name: "PLENO-PRO",
     price: "34,90",
     popular: false,
+    link: null,
     features: [
       { text: "2 aparelhos permitidos", included: true },
       { text: "Ideal para roteamento", included: true },
@@ -107,13 +110,25 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <Button
-                variant={plan.popular ? "hero" : "outline"}
-                className="w-full"
-                size="lg"
-              >
-                Assinar agora
-              </Button>
+              {plan.link ? (
+                <a href={plan.link}>
+                  <Button
+                    variant={plan.popular ? "hero" : "outline"}
+                    className="w-full"
+                    size="lg"
+                  >
+                    Assinar agora
+                  </Button>
+                </a>
+              ) : (
+                <Button
+                  variant={plan.popular ? "hero" : "outline"}
+                  className="w-full"
+                  size="lg"
+                >
+                  Assinar agora
+                </Button>
+              )}
             </div>
           ))}
         </div>

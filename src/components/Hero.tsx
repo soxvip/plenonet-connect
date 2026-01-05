@@ -22,9 +22,11 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg">
-                Adquirir um plano agora
-              </Button>
+              <a href="#planos">
+                <Button variant="hero" size="lg">
+                  Adquirir um plano agora
+                </Button>
+              </a>
               <Button variant="heroOutline" size="lg">
                 Como isso funciona?
               </Button>
