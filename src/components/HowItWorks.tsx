@@ -87,20 +87,19 @@ const HowItWorks = () => {
 
       {/* Modal */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-4xl h-[80vh]">
           <DialogHeader>
             <DialogTitle className="text-center">Baixar Aplicativo</DialogTitle>
             <DialogDescription className="text-center">
-              Clique no botão abaixo para baixar o aplicativo na Play Store
+              Baixe o aplicativo diretamente da Play Store
             </DialogDescription>
           </DialogHeader>
-          <div className="flex justify-center py-4">
-            <a href="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR">
-              <Button variant="hero" size="lg" className="gap-2">
-                <Download className="w-5 h-5" />
-                Ir para Play Store
-              </Button>
-            </a>
+          <div className="flex-1 w-full h-full min-h-[60vh]">
+            <iframe
+              src="https://play.google.com/store/apps/details?id=google.android.a34&hl=pt_BR"
+              className="w-full h-full rounded-lg border border-border"
+              title="Play Store"
+            />
           </div>
         </DialogContent>
       </Dialog>
