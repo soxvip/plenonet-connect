@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const navLinks = [{
     href: "#sobre",
     label: "Sobre"
@@ -37,11 +44,9 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9">
-              <Button variant="hero" size="default">
-                Testar
-              </Button>
-            </a>
+            <Button variant="hero" size="default" onClick={() => setIsVideoModalOpen(true)}>
+              Testar
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -55,12 +60,32 @@ const Navbar = () => {
             {navLinks.map(link => <a key={link.href} href={link.href} className="block py-3 text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
                 {link.label}
               </a>)}
-            <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9">
-              <Button variant="hero" className="w-full mt-4">
-                Testar
-              </Button>
-            </a>
+            <Button variant="hero" className="w-full mt-4" onClick={() => { setIsOpen(false); setIsVideoModalOpen(true); }}>
+              Testar
+            </Button>
           </div>}
+
+        {/* Video Modal */}
+        <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
+          <DialogContent className="sm:max-w-2xl">
+            <DialogHeader>
+              <DialogTitle>Assista o tutorial antes de testar</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col gap-4">
+              <video
+                src="https://wtjhwrqqhcoweegxwtav.supabase.co/storage/v1/object/public/bucket1/totim.mp4"
+                controls
+                className="w-full rounded-lg"
+                autoPlay
+              />
+              <a href="https://servex.ws/test/3c5cfe65-2403-45f6-86d8-d3b820e6a8c9" className="w-full">
+                <Button variant="hero" className="w-full" size="lg">
+                  Liberar teste agora
+                </Button>
+              </a>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </nav>;
 };
